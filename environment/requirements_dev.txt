@@ -3,5 +3,5 @@ isort==5.12.*
 pre-commit
 pylint
 pytest
-pytest-cov>=3,<4
+pytest-cov
 tox
