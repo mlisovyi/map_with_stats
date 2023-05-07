@@ -51,8 +51,8 @@ jobs:
       - name: Lint with pylint
         run: find src -type f -name "*.py" | xargs pylint -E -r y
       - name: Test with pytest
-        run:
-          - export PYTHONPATH=$PWD/src:$PYTHONPATH
-          - pytest
+        run: |
+          export PYTHONPATH=$PWD/src:$PYTHONPATH
+          pytest
       - name: Code typing
         run: mypy
