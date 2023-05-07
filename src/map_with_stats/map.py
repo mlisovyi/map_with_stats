@@ -1,4 +1,4 @@
-from typing import List, Literal, Optional, Tuple, Union
+from typing import List, Optional, Tuple, Union
 
 import folium
 import geopandas as gpd
@@ -9,7 +9,7 @@ from map_with_stats.utils import _check_cols_in_df, _round_coordinates
 def build_map(
     gdf_stats: gpd.GeoDataFrame,
     title: str,
-    bins_type: Literal["equidistant", "quantiles"],
+    bins_type: str,
     n_bins: int = 5,
     clip_quantile: Optional[float] = 0.01,
     map_tiles_provider: str = "OpenStreetMap",
