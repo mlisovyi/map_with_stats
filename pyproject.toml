@@ -54,10 +54,9 @@ addopts = "--cov=src/map_with_stats --cov-report=term --cov-config=pyproject.tom
 filterwarnings = ["ignore::FutureWarning", "ignore::pytest.PytestDeprecationWarning"]
 testpaths=["tests"]
 
-# [coverage:run]
-# # skip module and any further custom files
-# omit =
-#     */__init__.py
+[tool.coverage.run]
+# skip module and any further custom files
+omit =["*/__init__.py", "_version.py"]
 
 # # Tool to install the package and run test in various python versions
 # [tox:tox]
