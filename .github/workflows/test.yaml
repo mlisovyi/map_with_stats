@@ -1,0 +1,52 @@
+# name: Test python code
+
+# on:
+#   push:
+#     branches: [main]
+#     tags: ["*"]
+#   pull_request:
+#     branches: [main]
+
+# permissions:
+#   contents: read
+
+# jobs:
+#   # build_and_test:
+#   #   strategy:
+#   #     fail-fast: false
+#   #     matrix:
+#   #       os:
+#   #         - macos-latest
+#   #         - ubuntu-latest
+#   #         - windows-latest
+#   #       python-version: ["3.7", "3.8", "3.9", "3.10", "3.11"]
+#   #   runs-on: ${{ matrix.os }}
+
+#   #   steps:
+#   #     - uses: actions/checkout@v3
+#   #     - name: Set up Python ${{ matrix.python-version }}
+#   #       uses: actions/setup-python@v4
+#   #       with:
+#   #         python-version: ${{ matrix.python-version }}
+#   #     - name: Install dependencies
+#   #       run: |
+#   #         pip install -r requirements.txt
+
+#   test_local_code:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+#       - name: Set up Python 3.8
+#         uses: actions/setup-python@v4
+#         with:
+#           python-version: "3.8"
+#       - name: Install dependencies
+#         run: pip install -r requirements.txt
+#       - name: Lint with pylint
+#         run: find src -type f -name "*.py" | xargs pylint -E -r y
+#       - name: Test with pytest
+#         run: |
+#           export PYTHONPATH=$PWD/src:$PYTHONPATH
+#           pytest
+#       - name: Code typing
+#         run: mypy
