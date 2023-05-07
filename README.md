@@ -2,9 +2,9 @@
 
 
 <!-- [![coverage report](https://git.intern.migros.net/analytics/optimizers/store_profile_common/badges/main/coverage.svg)](https://git.intern.migros.net/analytics/optimizers/store_profile_common/-/commits/main) -->
-[![release @ PYPI](http://img.shields.io/pypi/v/maps_with_stats?color=brightgreen)](https://pypi.python.org/pypi/maps_with_stats)
-[![CI status](https://github.com/mlisovyi/map_with_stats/actions/workflows/test.yml/badge.svg?event=push)](https://github.com/mlisovyi/maps_with_stats)
-[![Docs status](https://github.com/mlisovyi/map_with_stats/actions/workflows/docs.yml/badge.svg)](https://github.com/mlisovyi/maps_with_stats)
+[![release @ PYPI](http://img.shields.io/pypi/v/map_with_stats?color=brightgreen)](https://pypi.python.org/pypi/map_with_stats)
+[![CI status](https://github.com/mlisovyi/map_with_stats/actions/workflows/test.yml/badge.svg?event=push)](https://github.com/mlisovyi/map_with_stats)
+[![Docs status](https://github.com/mlisovyi/map_with_stats/actions/workflows/docs.yml/badge.svg)](https://github.com/mlisovyi/map_with_stats)
 [![python version](https://img.shields.io/badge/python-3.6,3.7,3.8,3.9,3.10,3.11-blue.svg)](https://www.python.org/downloads/)
 [![linter](https://img.shields.io/badge/code%20linting-pylint-blue.svg)](https://github.com/PyCQA/pylint)
 [![testing](https://img.shields.io/badge/code%20testing-pytest-blue.svg)](https://github.com/pytest-dev/pytest)[![typing](https://img.shields.io/badge/code%20typing-mypy-blue.svg)](http://mypy-lang.org/)
