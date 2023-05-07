@@ -69,3 +69,21 @@ filterwarnings = ["ignore::FutureWarning"]
 #     pytest
 #     pytest-cov
 # commands = pytest {posargs} # substitute with tox' positional arguments
+
+[tool.mypy]
+# What files should be included.
+# This is a list of files/folders.
+files =["src"]
+# We want to be as strict as possible but allow reexports
+strict = true
+implicit_reexport = true
+
+[[tool.mypy.overrides]]
+module = [
+    "pandas",
+    "shapely",
+    "folium",
+    "geopandas",
+    "shapely.ops"
+]
+ignore_missing_imports = true
