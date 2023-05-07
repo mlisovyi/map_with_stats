@@ -1,0 +1,26 @@
+{
+    // enviromental variables for various terminals
+    "terminal.integrated.env.linux": {
+        "PYTHONPATH": "${workspaceFolder}/src:${env:PYTHONPATH}"
+    },
+    "terminal.integrated.env.windows": {
+        "PYTHONPATH": "${workspaceFolder}\\src;${env:PYTHONPATH}"
+    },
+    "terminal.integrated.env.osx": {
+        "PYTHONPATH": "${workspaceFolder}/src:${env:PYTHONPATH}"
+    },
+    // depending on your host OS use either windows.env (win) or linux.env (linux, osx)
+    // "python.envFile": "${workspaceFolder}/environment/windows.env",
+    "python.envFile": "${workspaceFolder}/environment/linux.env",
+    "python.formatting.provider": "black",
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": false,
+    "python.linting.pylintEnabled": true,
+    "python.testing.pytestEnabled": true,
+    // PYTHONPATH for the jupyter notebooks
+    "jupyter.notebookFileRoot": "${workspaceFolder}/src",
+    // just in case if you use a spell checker (and you should - for documentation writing, for example)
+    "cSpell.enableFiletypes": [
+        "!python"
+    ],
+}
