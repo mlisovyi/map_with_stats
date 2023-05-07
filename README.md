@@ -20,7 +20,7 @@ displaying some statistics as color per hectare (100x100 meter square).
 The package is created and tested to work for the **Switzerland coordinates**,
 however, one could try to use it for any other map with hectare statistics.
 
-![Example map](https://github.com/mlisovyi/map_with_stats/blob/main/docs/figs/map_screenshot.png)
+![Example map](https://github.com/mlisovyi/map_with_stats/blob/main/docs/figs/map_screenshot.png?raw=true)
 
 ## Installation
 
