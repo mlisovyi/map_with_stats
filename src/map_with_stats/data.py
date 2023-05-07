@@ -33,7 +33,7 @@ def create_geo_df_with_hectar_polygons(
         {
             "geometry": polygons,
             "value": df[col_value],
-            "hectar_id": df["X"] // 100 * 10_000 + df["Y"] // 100,
+            "hectare_id": df["X"] // 100 * 10_000 + df["Y"] // 100,
             "X": df["X"],
             "Y": df["Y"],
         },
