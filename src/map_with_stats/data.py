@@ -1,16 +1,12 @@
-import pandas as pd
 import geopandas as gpd
+import pandas as pd
 import shapely
 
 from map_with_stats.utils import _check_cols_in_df
 
 
 def filter_xy(
-    df: pd.DataFrame,
-    ch_x_min: float,
-    ch_y_min: float,
-    ch_x_max: float,
-    ch_y_max: float,
+    df: pd.DataFrame, ch_x_min: float, ch_y_min: float, ch_x_max: float, ch_y_max: float
 ) -> pd.DataFrame:
     _check_cols_in_df(df, ["X", "Y"])
     mask_x = df["X"].between(ch_x_min, ch_x_max)

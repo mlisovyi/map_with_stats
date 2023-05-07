@@ -1,8 +1,9 @@
 from typing import List, Literal, Optional, Tuple, Union
+
 import folium
 import geopandas as gpd
 
-from map_with_stats.utils import _round_coordinates, _check_cols_in_df
+from map_with_stats.utils import _check_cols_in_df, _round_coordinates
 
 
 def build_map(
@@ -23,9 +24,7 @@ def build_map(
     gdf = gdf_stats.copy(deep=True)
 
     ch_map = folium.Map(
-        location=coordinates_start,
-        zoom_start=zoom_start,
-        tiles=map_tiles_provider,
+        location=coordinates_start, zoom_start=zoom_start, tiles=map_tiles_provider
     )
 
     # optimise the number of hectares to be displayed as choropleth
