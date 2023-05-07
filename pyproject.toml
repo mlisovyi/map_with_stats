@@ -44,13 +44,15 @@ namespaces = false  # true by default
 [tool.setuptools.package-data]
 map_with_stats = ["py.typed"]
 
-[tool.pytest]
+[tool.pytest.ini_options]
 norecursedirs = '.*'
 # add --cov-report=html to generate an html report
 # in the html page one can well see which code is (not) covered
 # coverege report will be added to pytest run
 addopts = "--cov=src/map_with_stats --cov-report=term --cov-config=pyproject.toml --no-cov-on-fail"
-filterwarnings = ["ignore::FutureWarning"]
+# pytest issues PytestDeprecationWarning about hooks in pytest_cov, so we filter those out
+filterwarnings = ["ignore::FutureWarning", "ignore::pytest.PytestDeprecationWarning"]
+testpaths=["tests"]
 
 # [coverage:run]
 # # skip module and any further custom files
