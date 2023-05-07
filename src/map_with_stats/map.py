@@ -1,4 +1,4 @@
-from typing import Literal, Optional, Tuple
+from typing import List, Literal, Optional, Tuple, Union
 import folium
 import geopandas as gpd
 
@@ -47,6 +47,7 @@ def build_map(
         clip_min, clip_max = cliped_values.quantile((clip_quantile, 1 - clip_quantile))
         cliped_values = cliped_values.clip(clip_min, clip_max)
     # get either number of equidistant bins or bins defined by quantiles
+    bins: Union[int, List[float]]
     if bins_type == "quantiles":
         quantiles = [i / (n_bins) for i in range(n_bins + 1)]
         bins = list(cliped_values.quantile(quantiles))

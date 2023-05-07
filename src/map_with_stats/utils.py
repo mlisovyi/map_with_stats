@@ -1,6 +1,6 @@
 __all__ = ["hectare2xy"]
 
-from typing import List
+from typing import List, Tuple
 import pandas as pd
 
 import shapely
@@ -26,7 +26,7 @@ def _check_cols_in_df(df: pd.DataFrame, cols: List[str]) -> None:
 def _round_coordinates(
     geom: shapely.Geometry, n_digits_after_comma: int
 ) -> shapely.Geometry:
-    def _round_coords(x, y):
+    def _round_coords(x: float, y: float) -> Tuple[float, float]:
         x = round(x, n_digits_after_comma)
         y = round(y, n_digits_after_comma)
         return (x, y)
