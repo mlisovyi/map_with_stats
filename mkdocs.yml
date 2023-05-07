@@ -1,6 +1,6 @@
 site_name: "Map with statistics"
 # the git repo link in the header
-repo_url: https://github.com/mlisovyi/maps_with_stats
+repo_url: https://github.com/mlisovyi/map_with_stats
 # the title to use for the git repo link
 repo_name: "map_with_stats"
 # relative path to the markdown files on github
@@ -9,6 +9,7 @@ edit_uri: blob/main/docs/
 nav:
   - Introduction: "index.md"
   - FAQ: "faq.md"
+  - API: "api.md"
 
 theme:
   name: material
@@ -66,3 +67,14 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.details
   - pymdownx.tilde
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          # where to look for python modules. not strictly required, but helps, if building from an arbitrary folder
+          paths: [src]
+          options:
+            docstring_style: google
+            show_if_no_docstring: True
