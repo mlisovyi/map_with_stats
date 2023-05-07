@@ -1,8 +1,9 @@
-import map_with_stats as mws
-import numpy as np
-import pytest
-import pandas as pd
 import geopandas as gpd
+import numpy as np
+import pandas as pd
+import pytest
+
+import map_with_stats as mws
 from map_with_stats.utils import _check_cols_in_df
 
 
@@ -23,6 +24,6 @@ def test_create_geo_df_with_hectar_polygons(dummy_data):
     # check output type
     assert isinstance(gdf, gpd.GeoDataFrame)
     # check that geometry contains hectares
-    areas = gdf_stats["geometry"].area
+    areas = gdf["geometry"].area
     area_diff = (areas - 10_000).abs()
     assert (area_diff <= 1).all()

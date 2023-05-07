@@ -1,6 +1,7 @@
-import map_with_stats as mws
-import pytest
 import pandas as pd
+import pytest
+
+import map_with_stats as mws
 from map_with_stats.utils import _check_cols_in_df
 
 
