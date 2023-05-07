@@ -20,7 +20,7 @@ The package is created and tested to work for the **Switzerland coordinates**,
 however, one could try to use it for any other map with hectare statistics.
 
 <!-- FIXME -->
-![Example map](https://github.com/mlisovyi/maps_with_stats/docs/figs/map_screenshot.png)
+![Example map](https://github.com/mlisovyi/map_with_stats/blob/main/docs/figs/map_screenshot.png)
 
 ## Installation
 
