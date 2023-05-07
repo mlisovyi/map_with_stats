@@ -1,0 +1,69 @@
+[build-system]
+requires = ["setuptools>42", "wheel", "setuptools_scm>=6.2"]
+build-backend = "setuptools.build_meta"
+
+# the tool that generates a file with package version based on the latest tag
+# this file is **NOT** part of the git repository, as it changes with every commit
+[tool.setuptools_scm]
+write_to = "src/map_with_stats/_version.py"
+version_scheme = "post-release"
+
+[project]
+name = "map_with_stats"
+dynamic = ["version"]
+authors = ["Mischa Lisovyi"]
+description = "Interactive map with a choropleth displaying some statistics as color per hectare"
+readme = "README.md"
+license-files = { paths = ["LICENSE"] }
+requires-python = ">=3.6"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = ["folium>=0.14,<1.0"]
+
+[project.urls]
+"Homepage" = "https://github.com/mlisovyi/map_with_stats"
+"Bug Tracker" = "https://github.com/mlisovyi/map_with_stats/issues"
+"Documentation" = "https://mlisovyi.github.io/map_with_stats/"
+
+[tool.setuptools.packages]
+# All the following settings are optional:
+where = ["src"]  # ["."] by default
+include = ["map_with_stats.*"]  # ["*"] by default
+namespaces = false  # true by default
+
+[tool.setuptools.package-data]
+map_with_stats = ["py.typed"]
+
+[tool.pytest]
+norecursedirs = '.*'
+# add --cov-report=html to generate an html report
+# in the html page one can well see which code is (not) covered
+# coverege report will be added to pytest run
+addopts = "--cov=src/tmp_lib_1 --cov-report=term --cov-config=setup.cfg --no-cov-on-fail"
+filterwarnings = ["ignore::FutureWarning"]
+
+# [coverage:run]
+# # skip module and any further custom files
+# omit =
+#     */__init__.py
+
+# # Tool to install the package and run test in various python versions
+# [tox:tox]
+# # various python environments to run in. The names here have to be aligned with tox execution in CI/CD
+# envlist = python3.6,python3.7,python3.8,python3.10
+# # required for a package that can be installed
+# isolated_build = True
+
+# [testenv]
+# deps =
+#     pytest
+#     pytest-cov
+# commands = pytest {posargs} # substitute with tox' positional arguments
