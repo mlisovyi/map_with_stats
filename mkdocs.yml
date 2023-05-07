@@ -1,0 +1,68 @@
+site_name: "Map with statistics"
+# the git repo link in the header
+repo_url: https://github.com/mlisovyi/maps_with_stats
+# the title to use for the git repo link
+repo_name: "map_with_stats"
+# relative path to the markdown files on github
+edit_uri: blob/main/docs/
+
+nav:
+  - Introduction: "index.md"
+  - FAQ: "faq.md"
+
+theme:
+  name: material
+  # icon:
+  #   repo: fontawesome/brands/gitlab
+  features:
+    # enables annotations, see https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#code-annotations
+    - content.code.annotate
+    # for navigation features see https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/
+    - navigation.top
+    - navigation.tracking
+    # keep all sections in the navigation expanded by default
+    - navigation.expand
+    # add icon and link to the document on gihub for each page
+    - content.action.edit
+  icon:
+    # icon for the git repository link on the top-right
+    repo: fontawesome/brands/github
+    # icon for the view of the current page in the repository
+    edit: material/eye
+  palette:
+    # light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      # main theme color
+      primary: deep orange
+      # the color to change to for a hover on an interactive element
+      accent: amber
+      # definition of the  header icon for this mode
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    # dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      # main theme color
+      primary: deep orange
+      # the color to change to for a hover on an interactive element
+      accent: amber
+      # definition of the  header icon for this mode
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+
+# use a long list of recommended extensions from https://squidfunk.github.io/mkdocs-material/setup/extensions/?h=pymdownx#recommended-configuration
+markdown_extensions:
+  # Python Markdown
+  - admonition
+  - toc:
+      permalink: true
+
+  # Python Markdown Extensions
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.tilde
