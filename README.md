@@ -32,13 +32,13 @@ pip install map_with_stats
 
 For visualisation you will need some statistics per hectare.
 Individual hectares are defined by the X,Y coordinates
-in the [LV03](insert-some-link) coordinate system
+in the [LV03](https://en.wikipedia.org/wiki/Swiss_coordinate_system#LV03) coordinate system
 of the bottom-left (=south-west) corner.
 
 1. Such data could be for example downloaded from
-the [BFS website](https://www.bfs.admin.ch/bfs/de/home/dienstleistungen/geostat/geodaten-bundesstatistik).
+   the [BFS website](https://www.bfs.admin.ch/bfs/de/home/dienstleistungen/geostat/geodaten-bundesstatistik).
    * For example, one can get population data per hectare for year 2021 from
-[here](https://www.bfs.admin.ch/bfs/de/home/dienstleistungen/geostat/geodaten-bundesstatistik/gebaeude-wohnungen-haushalte-personen/bevoelkerung-haushalte-ab-2010.assetdetail.23528269.html).
+     [here](https://www.bfs.admin.ch/bfs/de/home/dienstleistungen/geostat/geodaten-bundesstatistik/gebaeude-wohnungen-haushalte-personen/bevoelkerung-haushalte-ab-2010.assetdetail.23528269.html).
 2. Download and extract _STATPOP2021.csv_ from the archive.
 3. Generate the HTML with the map:
    ```python
