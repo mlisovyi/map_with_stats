@@ -36,12 +36,9 @@ dependencies = ["folium>=0.14,<1.0"]
 [tool.setuptools.dynamic]
 version = {attr = "map_with_stats._version.__version__"}
 
-# [tool.setuptools.package-dir]
-# "" = "src"
-
 [tool.setuptools.packages.find]
 where = ["src"]  # ["."] by default
-include = ["map_with_stats.*"]
+include = ["map_with_stats*"]
 namespaces = false  # true by default
 
 [tool.setuptools.package-data]
