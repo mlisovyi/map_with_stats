@@ -11,10 +11,10 @@ version_scheme = "post-release"
 [project]
 name = "map_with_stats"
 dynamic = ["version"]
-authors = ["Mischa Lisovyi"]
+authors = [{name="Mischa Lisovyi"}]
 description = "Interactive map with a choropleth displaying some statistics as color per hectare"
 readme = "README.md"
-license-files = { paths = ["LICENSE"] }
+license = { file = "LICENSE" }
 requires-python = ">=3.6"
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -33,10 +33,15 @@ dependencies = ["folium>=0.14,<1.0"]
 "Bug Tracker" = "https://github.com/mlisovyi/map_with_stats/issues"
 "Documentation" = "https://mlisovyi.github.io/map_with_stats/"
 
-[tool.setuptools.packages]
-# All the following settings are optional:
+[tool.setuptools.dynamic]
+version = {attr = "map_with_stats._version.__version__"}
+
+# [tool.setuptools.package-dir]
+# "" = "src"
+
+[tool.setuptools.packages.find]
 where = ["src"]  # ["."] by default
-include = ["map_with_stats.*"]  # ["*"] by default
+include = ["map_with_stats.*"]
 namespaces = false  # true by default
 
 [tool.setuptools.package-data]
@@ -47,7 +52,7 @@ norecursedirs = '.*'
 # add --cov-report=html to generate an html report
 # in the html page one can well see which code is (not) covered
 # coverege report will be added to pytest run
-addopts = "--cov=src/tmp_lib_1 --cov-report=term --cov-config=setup.cfg --no-cov-on-fail"
+addopts = "--cov=src/map_with_stats --cov-report=term --cov-config=pyproject.toml --no-cov-on-fail"
 filterwarnings = ["ignore::FutureWarning"]
 
 # [coverage:run]
