@@ -48,11 +48,5 @@ jobs:
         run: |
           export PYTHONPATH=$PWD/src:$PYTHONPATH
           pytest
-      - name: Coverage Badge
-        uses: tj-actions/coverage-badge-py@v2
-      - uses: actions/upload-artifact@v3
-        with:
-          name: coverage_badge
-          path: coverage.svg
       - name: Code typing
         run: mypy
