@@ -3,7 +3,7 @@
 
 <!-- [![coverage report](https://git.intern.migros.net/analytics/optimizers/store_profile_common/badges/main/coverage.svg)](https://git.intern.migros.net/analytics/optimizers/store_profile_common/-/commits/main) -->
 [![release @ PYPI](http://img.shields.io/pypi/v/maps_with_stats?color=brightgreen)](https://pypi.python.org/pypi/maps_with_stats)
-[![CI status](https://github.com/mlisovyi/map_with_stats/actions/workflows/test.yml/badge.svg)](https://github.com/mlisovyi/maps_with_stats)
+[![CI status](https://github.com/mlisovyi/map_with_stats/actions/workflows/test.yml/badge.svg?event=push)](https://github.com/mlisovyi/maps_with_stats)
 [![Docs status](https://github.com/mlisovyi/map_with_stats/actions/workflows/docs.yml/badge.svg)](https://github.com/mlisovyi/maps_with_stats)
 [![python version](https://img.shields.io/badge/python-3.6,3.7,3.8,3.9,3.10,3.11-blue.svg)](https://www.python.org/downloads/)
 [![linter](https://img.shields.io/badge/code%20linting-pylint-blue.svg)](https://github.com/PyCQA/pylint)
@@ -20,7 +20,6 @@ displaying some statistics as color per hectare (100x100 meter square).
 The package is created and tested to work for the **Switzerland coordinates**,
 however, one could try to use it for any other map with hectare statistics.
 
-<!-- FIXME -->
 ![Example map](https://github.com/mlisovyi/map_with_stats/blob/main/docs/figs/map_screenshot.png)
 
 ## Installation
@@ -50,14 +49,17 @@ the [BFS website](https://www.bfs.admin.ch/bfs/de/home/dienstleistungen/geostat/
 
    data_raw = pd.read_csv("STATPOP2021.csv", sep=";")
    data = data_raw[["RELI", "B21BTOT"]]
-   data = mws.hectare2xy(data, "RELI")  # extract X,Y coordinates from the hectare ID
+   # `hectare2xy` is a helper function that extracts X,Y coordinates from the hectare ID
+   data = mws.hectare2xy(data, "RELI")
+   # `create_geo_df_with_hectar_polygons` is a helper function that creates GeoDataFrame with a polygon for each hectare
    gdf_stats = mws.create_geo_df_with_hectar_polygons(data, "B21BTOT", crs_out="EPSG:4326")
 
-   # restrict data to the Zürich neighbourhood
+   # restrict data to the Zürich neighbourhood - this step is optional
    mask_x = data["X"].between(6700_00, 7000_00)
    mask_y = data["Y"].between(2330_00, 2630_00)
    gdf = gdf_stats[mask_x & mask_y]
 
+   # `build_map` is the main helper function that will create a map with a coropleth layer
    title = "Dummy data"  # the to be used as data description in the tooltip and colormap
    map = mws.build_map(gdf, title, "equidistant", n_bins=5)
    map.save("map.html")
