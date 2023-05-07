@@ -1,0 +1,20 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: trailing-whitespace
+      - id: check-added-large-files
+      - id: check-docstring-first
+      - id: check-merge-conflict
+      - id: detect-private-key
+  - repo: https://github.com/psf/black
+    rev: ae2c0758c9e61a385df9700dc9c231bf54887041 # frozen: 22.3.0
+    hooks:
+      - id: black
+        # skip-magic-trailing-comma: do not enforce splitting line if it ends with comma
+        args: [--skip-magic-trailing-comma]
+  - repo: https://github.com/timothycrosley/isort
+    rev: e44834b7b294701f596c9118d6c370f86671a50d # frozen: 5.12.0
+    hooks:
+      - id: isort
+        args: ["--profile", "black"]
