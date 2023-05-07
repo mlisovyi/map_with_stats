@@ -3,6 +3,8 @@ cache/
 *.html
 
 tmp/
+_version.py
+
 # VSCode files
 .DS_Store
 
