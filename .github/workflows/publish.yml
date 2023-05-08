@@ -2,10 +2,7 @@ name: Publish to Test pypi
 
 on:
   push:
-    branches: [main]
     tags: ["*"]
-  pull_request:
-    branches: [main]
 
 permissions:
   contents: read
