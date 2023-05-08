@@ -22,8 +22,7 @@ displaying some statistics as color per hectare (100x100 meter square).
 The package is created and tested to work for the **Switzerland coordinates**,
 however, one could try to use it for any other map with hectare statistics.
 
-<!-- ![Example map](https://github.com/mlisovyi/map_with_stats/raw/main/docs/figs/map_screenshot.png) -->
-<img src="https://github.com/mlisovyi/map_with_stats/raw/main/docs/figs/map_screenshot.png" alt="Example map"></p>
+![Example map](https://github.com/mlisovyi/map_with_stats/raw/main/docs/figs/map_screenshot.png)
 
 
 ## Installation
@@ -68,4 +67,3 @@ of the bottom-left (=south-west) corner.
    map = mws.build_map(gdf, title, "equidistant", n_bins=5)
    map.save("map.html")
    ```
-
