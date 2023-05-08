@@ -4,8 +4,7 @@ on: workflow_dispatch
 
 permissions:
   contents: read
-  permissions:
-    id-token: write # IMPORTANT: this permission is mandatory for trusted publishing
+  id-token: write # IMPORTANT: this permission is mandatory for trusted publishing
 
 jobs:
   publish-pypi:
