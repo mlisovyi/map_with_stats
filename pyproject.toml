@@ -30,7 +30,6 @@ dependencies = ["folium>=0.10,<1.0", "geopandas>=0.10,<1.0"]
 
 [project.urls]
 "Homepage" = "https://github.com/mlisovyi/map_with_stats"
-"Bug Tracker" = "https://github.com/mlisovyi/map_with_stats/issues"
 "Documentation" = "https://mlisovyi.github.io/map_with_stats/"
 
 [tool.setuptools.dynamic]
