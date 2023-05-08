@@ -15,7 +15,7 @@ authors = [{name="Mischa Lisovyi"}]
 description = "Interactive map with a choropleth displaying some statistics as color per hectare"
 readme = "README.md"
 license = { file = "LICENSE" }
-requires-python = ">=3.6"
+requires-python = ">=3.7"
 classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.7",
@@ -25,6 +25,7 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
+    "Typing :: Typed",
 ]
 dependencies = ["folium>=0.10,<1.0", "geopandas>=0.10,<1.0"]
 
