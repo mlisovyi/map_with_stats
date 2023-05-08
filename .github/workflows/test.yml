@@ -3,7 +3,6 @@ name: Test python code
 on:
   push:
     branches: [main]
-    tags: ["*"]
   pull_request:
     branches: [main]
 
