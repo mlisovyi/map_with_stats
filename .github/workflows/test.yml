@@ -31,7 +31,7 @@ jobs:
         run: |
           pip install pytest pytest-cov
           pip install .
-      - name: Test with pytest
+      - name: 🧪 Test with pytest
         run: pytest
 
   test_local_code:
@@ -44,11 +44,11 @@ jobs:
           python-version: "3.9"
       - name: 💻 Install dependencies
         run: pip install -r requirements.txt
-      - name: Lint with pylint
+      - name: 🧪 Lint with pylint
         run: find src -type f -name "*.py" | xargs pylint -E -r y
-      - name: Test with pytest
+      - name: 🧪 Test with pytest
         run: |
           export PYTHONPATH=$PWD/src:$PYTHONPATH
           pytest
-      - name: Code typing
+      - name: 🧪 Code typing
         run: mypy

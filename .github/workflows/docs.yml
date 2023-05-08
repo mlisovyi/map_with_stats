@@ -1,4 +1,4 @@
-name: Build and deploy doc pages
+name: 📖 Build and deploy doc pages
 on:
   push:
     branches:
