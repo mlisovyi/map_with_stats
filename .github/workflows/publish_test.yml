@@ -6,7 +6,7 @@ on:
 
 jobs:
   publish-testpypi:
-    uses: .github/workflows/publish_template.yml
+    uses: ./.github/workflows/publish_template.yml
     with:
       environment-name: "testpypi"
       environment-url: "https://test.pypi.org/p/map_with_stats"
