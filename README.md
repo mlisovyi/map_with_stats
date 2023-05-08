@@ -2,16 +2,18 @@
 
 
 <!-- [![coverage report](https://git.intern.migros.net/analytics/optimizers/store_profile_common/badges/main/coverage.svg)](https://git.intern.migros.net/analytics/optimizers/store_profile_common/-/commits/main) -->
-[![release @ PYPI](http://img.shields.io/pypi/v/map_with_stats?color=brightgreen)](https://pypi.python.org/pypi/map_with_stats)
-[![CI status](https://github.com/mlisovyi/map_with_stats/actions/workflows/test.yml/badge.svg?event=push)](https://github.com/mlisovyi/map_with_stats)
+[![release @ PYPI](http://img.shields.io/pypi/v/map_with_stats?color=brightgreen&logo=pypi&logoColor=949DA5)](https://pypi.python.org/pypi/map_with_stats)
+[![python version](https://img.shields.io/badge/python-3.7,3.8,3.9,3.10,3.11-blue.svg?logo=python&logoColor=949DA5)](https://www.python.org/downloads/)
+[![platform](https://img.shields.io/badge/platform-linux%20|%20macos%20|%20windows-lightgray.svg)](https://github.com/PyCQA/pylint)
+[![CI status](https://github.com/mlisovyi/map_with_stats/actions/workflows/test.yml/badge.svg?labelColor=555555?event=push)](https://github.com/mlisovyi/map_with_stats)
 [![Docs status](https://github.com/mlisovyi/map_with_stats/actions/workflows/docs.yml/badge.svg)](https://github.com/mlisovyi/map_with_stats)
-[![python version](https://img.shields.io/badge/python-3.7,3.8,3.9,3.10,3.11-blue.svg)](https://www.python.org/downloads/)
 [![linter](https://img.shields.io/badge/code%20linting-pylint-blue.svg)](https://github.com/PyCQA/pylint)
-[![testing](https://img.shields.io/badge/code%20testing-pytest-blue.svg)](https://github.com/pytest-dev/pytest)[![typing](https://img.shields.io/badge/code%20typing-mypy-blue.svg)](http://mypy-lang.org/)
+[![testing](https://img.shields.io/badge/code%20testing-pytest-blue.svg)](https://github.com/pytest-dev/pytest)
+[![typing](https://img.shields.io/badge/code%20typing-mypy-blue.svg)](http://mypy-lang.org/)
 [![docs](https://img.shields.io/badge/documentation-mkdocs--material-blue.svg)](https://squidfunk.github.io/mkdocs-material/)
 [![versioning](https://img.shields.io/badge/versioning-setuptools--scm-blue.svg)](https://github.com/pypa/setuptools_scm)
 [![code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![documentation](https://img.shields.io/badge/-documentation-blueviolet)](https://mlisovyi.github.io/map_with_stats)
+[![documentation](https://img.shields.io/badge/_-documentation-blueviolet?logo=githubpages)](https://mlisovyi.github.io/map_with_stats)
 
 
 The package allows to display an interactive map with a choropleth
