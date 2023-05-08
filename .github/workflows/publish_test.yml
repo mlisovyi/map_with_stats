@@ -3,7 +3,6 @@ name: 🚀🧪 Publish to Test pypi
 on:
   push:
     tags: ["*"]
-  workflow_dispatch:
 
 permissions:
   contents: read
