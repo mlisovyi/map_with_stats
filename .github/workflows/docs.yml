@@ -11,12 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v4
         with:
           python-version: 3.9
       - uses: actions/cache@v2
         with:
           key: ${{ github.ref }}
           path: .cache
-      - run: pip install mkdocs-material>=9.0.0 mkdocstrings[python]
-      - run: mkdocs gh-deploy --force
+      - name: 💻 Install build dependencies
+        run: pip install mkdocs-material>=9.0.0 mkdocstrings[python]
+      - name: 📖 Publish HTML into GitHub Pages branch
+        run: mkdocs gh-deploy --force
