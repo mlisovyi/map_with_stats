@@ -11,7 +11,7 @@
 [![docs](https://img.shields.io/badge/documentation-mkdocs--material-blue.svg)](https://squidfunk.github.io/mkdocs-material/)
 [![versioning](https://img.shields.io/badge/versioning-setuptools--scm-blue.svg)](https://github.com/pypa/setuptools_scm)
 [![code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![documentation](https://img.shields.io/badge/-documentation-blueviolet)](https://mlisovyi.github.io/)
+[![documentation](https://img.shields.io/badge/-documentation-blueviolet)](https://mlisovyi.github.io/map_with_stats)
 
 
 The package allows to display an interactive map with a choropleth
