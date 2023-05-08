@@ -1,3 +1,15 @@
+name: Publish to Test pypi
+
+on:
+  push:
+    branches: [main]
+    tags: ["*"]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
 # Job template was copied from https://github.com/marketplace/actions/pypi-publish
 jobs:
   testpypi-publish:
