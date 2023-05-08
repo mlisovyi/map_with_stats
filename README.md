@@ -4,7 +4,7 @@
 <!-- [![coverage report](https://git.intern.migros.net/analytics/optimizers/store_profile_common/badges/main/coverage.svg)](https://git.intern.migros.net/analytics/optimizers/store_profile_common/-/commits/main) -->
 [![release @ PYPI](http://img.shields.io/pypi/v/map_with_stats?color=brightgreen&logo=pypi&logoColor=949DA5)](https://pypi.python.org/pypi/map_with_stats)
 [![python version](https://img.shields.io/badge/python-3.7,3.8,3.9,3.10,3.11-blue.svg?logo=python&logoColor=949DA5)](https://www.python.org/downloads/)
-[![platform](https://img.shields.io/badge/platform-linux%20|%20macos%20|%20windows-lightgray.svg)](https://github.com/PyCQA/pylint)
+![platform](https://img.shields.io/badge/platform-linux%20|%20macos%20|%20windows-lightgray.svg)
 [![CI status](https://github.com/mlisovyi/map_with_stats/actions/workflows/test.yml/badge.svg?labelColor=555555?event=push)](https://github.com/mlisovyi/map_with_stats)
 [![Docs status](https://github.com/mlisovyi/map_with_stats/actions/workflows/docs.yml/badge.svg)](https://github.com/mlisovyi/map_with_stats)
 [![linter](https://img.shields.io/badge/code%20linting-pylint-blue.svg)](https://github.com/PyCQA/pylint)
