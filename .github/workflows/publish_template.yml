@@ -13,8 +13,8 @@ on:
         required: true
         type: string
 
-permissions:
-  contents: read
+# calling workflows must ensure to set `id-token: write` permissons either at the workflow or job level, according to
+# https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/about-security-hardening-with-openid-connect#adding-permissions-settings
 
 # Job template was copied from https://github.com/marketplace/actions/pypi-publish
 jobs:
@@ -24,8 +24,6 @@ jobs:
     environment:
       name: ${{ inputs.environment-name }}
       url: ${{ inputs.environment-url }}
-    permissions:
-      id-token: write # IMPORTANT: this permission is mandatory for trusted publishing
     steps:
       - uses: actions/checkout@v3
       - name: 🐍 Set up Python

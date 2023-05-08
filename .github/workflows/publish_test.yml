@@ -5,6 +5,11 @@ on:
     tags: ["*"]
   workflow_dispatch:
 
+permissions:
+  contents: read
+  permissions:
+    id-token: write # IMPORTANT: this permission is mandatory for trusted publishing
+
 jobs:
   publish-testpypi:
     uses: ./.github/workflows/publish_template.yml

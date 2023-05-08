@@ -2,6 +2,11 @@ name: 🚀 Publish to pypi
 
 on: workflow_dispatch
 
+permissions:
+  contents: read
+  permissions:
+    id-token: write # IMPORTANT: this permission is mandatory for trusted publishing
+
 jobs:
   publish-pypi:
     uses: ./.github/workflows/publish_template.yml
