@@ -1,0 +1,12 @@
+name: 🚀 Publish to pypi
+
+on:
+  on: workflow_dispatch
+
+jobs:
+  publish-pypi:
+    uses: .github/workflows/publish_template.yml
+    with:
+      environment-name: "pypi"
+      environment-url: "https://pypi.org/p/map_with_stats"
+      publish-url: https://upload.pypi.org/legacy/

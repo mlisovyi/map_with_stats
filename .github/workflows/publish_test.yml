@@ -1,0 +1,13 @@
+name: 🚀🧪 Publish to Test pypi
+
+on:
+  push:
+    tags: ["*"]
+
+jobs:
+  publish-testpypi:
+    uses: .github/workflows/publish_template.yml
+    with:
+      environment-name: "testpypi"
+      environment-url: "https://test.pypi.org/p/map_with_stats"
+      publish-url: https://test.pypi.org/legacy/

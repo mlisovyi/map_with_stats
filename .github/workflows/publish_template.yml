@@ -1,20 +1,29 @@
-name: 🚀 Publish to Test pypi
+name: "🚀 Publish to pypi: TEMPLATE"
 
 on:
-  push:
-    tags: ["*"]
+  workflow_call:
+    inputs:
+      environment-name:
+        required: true
+        type: string
+      environment-url:
+        required: true
+        type: string
+      publish-url:
+        required: true
+        type: string
 
 permissions:
   contents: read
 
 # Job template was copied from https://github.com/marketplace/actions/pypi-publish
 jobs:
-  testpypi-publish:
-    name: Upload release to TestPyPI
+  publish:
+    name: Upload release to PyPI
     runs-on: ubuntu-latest
     environment:
-      name: testpypi
-      url: https://pypi.org/p/map_with_stats
+      name: ${{ inputs.environment-name }}
+      url: ${{ inputs.environment-url }}
     permissions:
       id-token: write # IMPORTANT: this permission is mandatory for trusted publishing
     steps:
@@ -30,4 +39,4 @@ jobs:
       - name: 🚀 Publish package distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          repository-url: https://test.pypi.org/legacy/
+          repository-url: ${{ inputs.publish-url }}
