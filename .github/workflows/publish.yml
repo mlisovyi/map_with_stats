@@ -1,0 +1,22 @@
+# Job template was copied from https://github.com/marketplace/actions/pypi-publish
+jobs:
+  testpypi-publish:
+    name: Upload release to TestPyPI
+    runs-on: ubuntu-latest
+    environment:
+      name: testpypi
+      url: https://pypi.org/p/map_with_stats
+    permissions:
+      id-token: write # IMPORTANT: this permission is mandatory for trusted publishing
+    steps:
+      - uses: actions/checkout@v3
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+      - name: 💻 Install dependencies
+        run: pip install build
+      - name: 🔨 Build distribution
+        run: python -m build
+      - name: 📖 Publish package distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
