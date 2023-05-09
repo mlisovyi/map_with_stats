@@ -22,9 +22,13 @@ displaying some statistics as color per hectare (100x100 meter square).
 The package is created and tested to work for the **Switzerland coordinates**,
 however, one could try to use it for any other map with hectare statistics.
 
-![raw instead of blob](https://github.com/mlisovyi/map_with_stats/raw/main/docs/figs/map_screenshot.png)
-![raw in query](https://github.com/mlisovyi/map_with_stats/blob/main/docs/figs/map_screenshot.png?raw=true)
-![githubusercontent](https://raw.githubusercontent.com/mlisovyi/map_with_stats/main/docs/figs/map_screenshot.png)
+![MD raw instead of blob](https://github.com/mlisovyi/map_with_stats/raw/main/docs/figs/map_screenshot.png)
+![MD raw in query](https://github.com/mlisovyi/map_with_stats/blob/main/docs/figs/map_screenshot.png?raw=true)
+![MD githubusercontent](https://raw.githubusercontent.com/mlisovyi/map_with_stats/main/docs/figs/map_screenshot.png)
+![local file](docs/figs/map_screenshot.png)
+<img src="https://github.com/mlisovyi/map_with_stats/raw/main/docs/figs/map_screenshot.png" alt="HTML raw instead of blob"></a>
+<img src="https://github.com/mlisovyi/map_with_stats/blob/main/docs/figs/map_screenshot.png?raw=true" alt="HTML raw in query"></a>
+<img src="https://raw.githubusercontent.com/mlisovyi/map_with_stats/main/docs/figs/map_screenshot.png" alt="HTML githubusercontent"></a>
 
 
 ## Installation
