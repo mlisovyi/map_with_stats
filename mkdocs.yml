@@ -30,6 +30,7 @@ theme:
     repo: fontawesome/brands/github
     # icon for the view of the current page in the repository
     edit: material/eye
+  favicon: assets/favicon-32x32.png
   palette:
     # light mode
     - media: "(prefers-color-scheme: light)"
