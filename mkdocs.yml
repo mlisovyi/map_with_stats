@@ -14,8 +14,6 @@ nav:
 
 theme:
   name: material
-  # icon:
-  #   repo: fontawesome/brands/gitlab
   features:
     # enables annotations, see https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#code-annotations
     - content.code.annotate
@@ -27,6 +25,7 @@ theme:
     # add icon and link to the document on gihub for each page
     - content.action.edit
   icon:
+    logo: fontawesome/solid/map
     # icon for the git repository link on the top-right
     repo: fontawesome/brands/github
     # icon for the view of the current page in the repository
