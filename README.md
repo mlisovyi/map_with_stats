@@ -16,12 +16,18 @@
 [![documentation](https://img.shields.io/badge/_-documentation-blueviolet?logo=githubpages)](https://mlisovyi.github.io/map_with_stats)
 
 
-The package allows to display an interactive map with a choropleth
-displaying some statistics as color per hectare (100x100 meter square).
+The package allows to display an **interactive map with a choropleth
+displaying some statistics as color per hectare** (100x100 meter square).
+
+![Example map](https://github.com/mlisovyi/map_with_stats/raw/main/docs/figs/map_screenshot.jpeg)
+
+!!! question "What is the use-case?"
+
+      The typical use-case would be to visualise and do plausibility checks of hectare-level data
+      as well as to compare statistics between geographic areas.
 
 The package is created and tested to work for the **Switzerland coordinates**,
 however, one could try to use it for any other map with hectare statistics.
 
-![Example map](https://github.com/mlisovyi/map_with_stats/raw/main/docs/figs/map_screenshot.jpeg)
 
 Read about usage in [Quick start guide](https://mlisovyi.github.io/map_with_stats/quick_start)
