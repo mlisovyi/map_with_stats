@@ -8,13 +8,12 @@ edit_uri: blob/main/docs/
 
 nav:
   - Introduction: "index.md"
+  - Quick start guide: "quick_start.md"
   - FAQ: "faq.md"
   - API: "api.md"
 
 theme:
   name: material
-  # icon:
-  #   repo: fontawesome/brands/gitlab
   features:
     # enables annotations, see https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#code-annotations
     - content.code.annotate
@@ -26,10 +25,12 @@ theme:
     # add icon and link to the document on gihub for each page
     - content.action.edit
   icon:
+    logo: fontawesome/solid/map
     # icon for the git repository link on the top-right
     repo: fontawesome/brands/github
     # icon for the view of the current page in the repository
     edit: material/eye
+  favicon: assets/favicon-32x32.png
   palette:
     # light mode
     - media: "(prefers-color-scheme: light)"
