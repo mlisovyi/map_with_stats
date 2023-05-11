@@ -82,3 +82,8 @@ plugins:
           options:
             docstring_style: google
             show_if_no_docstring: True
+            show_root_toc_entry: False
+
+# auto-reload on changes in the following folders outside of the docs (for development of docs)
+watch:
+  - src
