@@ -40,12 +40,14 @@ def build_map(
         optimise_choropleth_size (bool, optional): Set to True to reduce precision of polygon
             coordinates to a pre-defined optimised value that will keep hectare boundary precision.
             This allows to reduce the size of the map HTML dump on disk. Defaults to True.
-        coordinates_start (Tuple[float, float], optional): starting coordinated in longiotude and latitude. Defaults to (47.39, 8.53).
+        coordinates_start (Tuple[float, float], optional): starting coordinated in longiotude and latitude.
+            Defaults to (47.39, 8.53) [Zürich].
         zoom_start (int, optional): starting zoom. Defaults to 15.
-        max_n_hectares_to_display (Optional[int], optional): _description_. Defaults to None.
+        max_n_hectares_to_display (Optional[int], optional): the top-N hectares to display.
+            Defaults to None.
 
     Raises:
-        ValueError: _description_
+        ValueError: unsopprted `bins_type` provided.
 
     Returns:
         folium.Map: _description_
