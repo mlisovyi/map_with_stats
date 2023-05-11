@@ -18,6 +18,38 @@ def build_map(
     zoom_start: int = 15,
     max_n_hectares_to_display: Optional[int] = None,
 ) -> folium.Map:
+    """Generate a folium map with the some statistics per hectare added as a choropleth alayer on top.
+
+    See [FAQ](faq) for detailed explanation and typical use-cases of more complex attributes.
+
+    Args:
+        gdf_stats (gpd.GeoDataFrame): input table with the hectare polygons and statistics values.
+        title (str): the name to be displayed as the color-map title as well as
+            the entry in the control panel.
+        bins_type (str): The type of binning for the choropleth.
+            Accepted values are _"equidistant"_ and _"quantiles"_
+            that would define bins either on the linear or on the quantile scale.
+        n_bins (int, optional): number of bins to use. Defaults to 5.
+        clip_quantile (Optional[float], optional): clip/winzorise statistics values to specific quntiles.
+            The effect is double-sided.
+            Set to _None_ to avoid any clipping.
+            Defaults to 0.01.
+        map_tiles_provider (str, optional): Map tileset to use.
+            The value is passed over to [folium.Map](https://python-visualization.github.io/folium/modules.html#folium.folium.Map).
+            Defaults to "OpenStreetMap".
+        optimise_choropleth_size (bool, optional): Set to True to reduce precision of polygon
+            coordinates to a pre-defined optimised value that will keep hectare boundary precision.
+            This allows to reduce the size of the map HTML dump on disk. Defaults to True.
+        coordinates_start (Tuple[float, float], optional): starting coordinated in longiotude and latitude. Defaults to (47.39, 8.53).
+        zoom_start (int, optional): starting zoom. Defaults to 15.
+        max_n_hectares_to_display (Optional[int], optional): _description_. Defaults to None.
+
+    Raises:
+        ValueError: _description_
+
+    Returns:
+        folium.Map: _description_
+    """
     _check_cols_in_df(gdf_stats, ["geometry", "value", "X", "Y"])
 
     # make a copy to avoid modifying input data in-place
