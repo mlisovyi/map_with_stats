@@ -47,10 +47,10 @@ def build_map(
             Defaults to None.
 
     Raises:
-        ValueError: unsopprted `bins_type` provided.
+        ValueError: unsupported `bins_type` provided.
 
     Returns:
-        folium.Map: _description_
+        folium.Map: the map with cholopleth layer
     """
     _check_cols_in_df(gdf_stats, ["geometry", "value", "X", "Y"])
 
