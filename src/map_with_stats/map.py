@@ -101,7 +101,8 @@ def build_map(
         # no line, for example around hectares
         line_weight = 0
         line_color = "black"
-    # coloured square with the colour reflecting the statistics value
+    # coloured choropleth with the colour reflecting the statistics value
+    # for example squares in the case of hectares
     choropleth = folium.Choropleth(
         geo_data=gdf,
         data=cliped_values,
