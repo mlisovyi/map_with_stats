@@ -56,7 +56,8 @@ def build_map(
     Returns:
         folium.Map: the map with cholopleth layer
     """
-    _check_cols_in_df(gdf_stats, ["geometry", "value", "X", "Y"])
+
+    _check_cols_in_df(gdf_stats, ["geometry", "value"])
 
     # make a copy to avoid modifying input data in-place
     gdf = gdf_stats.copy(deep=True)
@@ -117,10 +118,12 @@ def build_map(
         name=title,  # name of thew layer, e.g. in the layer control
     ).add_to(ch_map)
 
+    # optional X and Y coordinates that would appear for hectares, but not for administrative regions
+    cols_xy = [c for c in ["X", "Y"] if c in gdf]
     # add tooltip to appear, when pointing at a hectar
     tooltip = folium.GeoJsonTooltip(
         # column names with values to be displayed
-        fields=["X", "Y", "value"],
+        fields=cols_xy + ["value"],
         # text to be shown explaining each value
         aliases=["LV03 X:", "LV03 Y:", f"{title}:"],
         localize=True,
