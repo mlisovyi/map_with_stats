@@ -17,6 +17,7 @@ def build_map(
     coordinates_start: Tuple[float, float] = (47.39, 8.53),
     zoom_start: int = 15,
     max_n_hectares_to_display: Optional[int] = None,
+    plot_boundaries: bool = False,
 ) -> folium.Map:
     """Generate a folium map with the some statistics per hectare added as a choropleth alayer on top.
 
@@ -45,6 +46,9 @@ def build_map(
         zoom_start (int, optional): starting zoom. Defaults to 15.
         max_n_hectares_to_display (Optional[int], optional): the top-N hectares to display.
             Defaults to None.
+        plot_boundaries (bool, optional): set to True to display boundaries between choroplet elements.
+            This is useful if you visualise not hectares but some administrative entities.
+            Defaults to False.
 
     Raises:
         ValueError: unsupported `bins_type` provided.
@@ -89,6 +93,14 @@ def build_map(
     else:
         raise ValueError(f"Unexpected type of bins: {bins_type}")
 
+    if plot_boundaries:
+        # thin gray line
+        line_weight = 0.5
+        line_color = "gray"
+    else:
+        # no line, for example around hectares
+        line_weight = 0
+        line_color = "black"
     # coloured square with the colour reflecting the statistics value
     choropleth = folium.Choropleth(
         geo_data=gdf,
@@ -97,7 +109,8 @@ def build_map(
         fill_color="YlOrBr",
         fill_opacity=0.6,
         bins=bins,
-        line_weight=0,  # no line around hectare
+        line_weight=line_weight,
+        line_color=line_color,
         nan_fill_opacity=1,  # fully transparent hectares if the valueis mising
         legend_name=title,  # title under the color scale
         name=title,  # name of thew layer, e.g. in the layer control
