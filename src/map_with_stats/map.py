@@ -120,12 +120,13 @@ def build_map(
 
     # optional X and Y coordinates that would appear for hectares, but not for administrative regions
     cols_xy = [c for c in ["X", "Y"] if c in gdf]
+    labels_xy = ["LV03 X:", "LV03 Y:"] if cols_xy else []
     # add tooltip to appear, when pointing at a hectar
     tooltip = folium.GeoJsonTooltip(
         # column names with values to be displayed
         fields=cols_xy + ["value"],
         # text to be shown explaining each value
-        aliases=["LV03 X:", "LV03 Y:", f"{title}:"],
+        aliases=labels_xy + [f"{title}:"],
         localize=True,
         max_width=800,
     )
