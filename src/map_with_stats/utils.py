@@ -64,10 +64,9 @@ def _round_coordinates(
         shapely.Geometry: output geometries with reduced precision
     """
 
-    def _round_coords(x: float, y: float) -> Tuple[float, float]:
-        x = round(x, n_digits_after_comma)
-        y = round(y, n_digits_after_comma)
-        return (x, y)
+    def _round_coords(*arg: float) -> Tuple[float, ...]:
+        out = [round(x, n_digits_after_comma) for x in arg]
+        return tuple(out)
 
     geom_transformed = shapely.ops.transform(_round_coords, geom)
     return geom_transformed

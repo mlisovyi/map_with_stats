@@ -17,6 +17,7 @@ def build_map(
     coordinates_start: Tuple[float, float] = (47.39, 8.53),
     zoom_start: int = 15,
     max_n_hectares_to_display: Optional[int] = None,
+    plot_boundaries: bool = False,
 ) -> folium.Map:
     """Generate a folium map with the some statistics per hectare added as a choropleth alayer on top.
 
@@ -45,6 +46,9 @@ def build_map(
         zoom_start (int, optional): starting zoom. Defaults to 15.
         max_n_hectares_to_display (Optional[int], optional): the top-N hectares to display.
             Defaults to None.
+        plot_boundaries (bool, optional): set to True to display boundaries between choroplet elements.
+            This is useful if you visualise not hectares but some administrative entities.
+            Defaults to False.
 
     Raises:
         ValueError: unsupported `bins_type` provided.
@@ -52,7 +56,8 @@ def build_map(
     Returns:
         folium.Map: the map with cholopleth layer
     """
-    _check_cols_in_df(gdf_stats, ["geometry", "value", "X", "Y"])
+
+    _check_cols_in_df(gdf_stats, ["geometry", "value"])
 
     # make a copy to avoid modifying input data in-place
     gdf = gdf_stats.copy(deep=True)
@@ -89,7 +94,16 @@ def build_map(
     else:
         raise ValueError(f"Unexpected type of bins: {bins_type}")
 
-    # coloured square with the colour reflecting the statistics value
+    if plot_boundaries:
+        # thin gray line
+        line_weight = 0.5
+        line_color = "gray"
+    else:
+        # no line, for example around hectares
+        line_weight = 0
+        line_color = "black"
+    # coloured choropleth with the colour reflecting the statistics value
+    # for example squares in the case of hectares
     choropleth = folium.Choropleth(
         geo_data=gdf,
         data=cliped_values,
@@ -97,18 +111,22 @@ def build_map(
         fill_color="YlOrBr",
         fill_opacity=0.6,
         bins=bins,
-        line_weight=0,  # no line around hectare
+        line_weight=line_weight,
+        line_color=line_color,
         nan_fill_opacity=1,  # fully transparent hectares if the valueis mising
         legend_name=title,  # title under the color scale
         name=title,  # name of thew layer, e.g. in the layer control
     ).add_to(ch_map)
 
+    # optional X and Y coordinates that would appear for hectares, but not for administrative regions
+    cols_xy = [c for c in ["X", "Y"] if c in gdf]
+    labels_xy = ["LV03 X:", "LV03 Y:"] if cols_xy else []
     # add tooltip to appear, when pointing at a hectar
     tooltip = folium.GeoJsonTooltip(
         # column names with values to be displayed
-        fields=["X", "Y", "value"],
+        fields=cols_xy + ["value"],
         # text to be shown explaining each value
-        aliases=["LV03 X:", "LV03 Y:", f"{title}:"],
+        aliases=labels_xy + [f"{title}:"],
         localize=True,
         max_width=800,
     )
