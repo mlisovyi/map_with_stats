@@ -30,9 +30,11 @@ def filter_xy(
 def create_geo_df_with_hectar_polygons(
     df: pd.DataFrame, col_value: str, crs_out: str = "EPSG:4326"
 ) -> gpd.GeoDataFrame:
-    """Given a pandas dataframe with _"X", "Y"_ coordinates of the bottom-left (south-west) corner
+    """Generate hectare polygons.
+
+    Given a pandas dataframe with _"X", "Y"_ coordinates of the bottom-left (south-west) corner
     of the hectares and a column `col_value` with values, create a geopandas geodataframe with
-    hectare polygons and the selected column with values
+    hectare polygons and the selected column with values.
 
     Args:
         df (pd.DataFrame): input data. The code expects to find the following columns: _"X", "Y", `col_value`_.
