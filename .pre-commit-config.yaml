@@ -7,6 +7,11 @@ repos:
       - id: check-docstring-first
       - id: check-merge-conflict
       - id: detect-private-key
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: b9787ef94f0d06972b93b36730548f0d928f26f9 # frozen: v0.0.285
+    hooks:
+      - id: ruff
+        args: [--fix, --exit-non-zero-on-fix]
   - repo: https://github.com/psf/black
     rev: ae2c0758c9e61a385df9700dc9c231bf54887041 # frozen: 22.3.0
     hooks:
