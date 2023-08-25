@@ -62,6 +62,25 @@ testpaths = ["tests"]
 # skip module and any further custom files
 omit = ["*/__init__.py", "_version.py"]
 
+[tool.ruff]
+select = [
+    "E",   # pycodestyle
+    "F",   # pyflakes
+    "N",   # naming according to PEP8
+    "D",   # pydocstyle
+    "PD",  # pandas linter
+    "NPY", # numpy linter
+]
+ignore = [
+    "E501", # line length is regulated by black
+    "D100", # modules typically have no doc-string in this project
+    "D104", # packages typically have no doc-string in this project
+]
+src = ["src"]
+
+[tool.ruff.pydocstyle]
+convention = "google"
+
 [tool.mypy]
 # What files should be included.
 files = ["src"]
