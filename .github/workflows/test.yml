@@ -44,8 +44,8 @@ jobs:
           python-version: "3.9"
       - name: 💻 Install dependencies
         run: pip install -r requirements.txt
-      - name: 🧪 Lint with pylint
-        run: find src -type f -name "*.py" | xargs pylint -E -r y
+      - name: 🧪 Lint with ruff
+        run: ruff check .
       - name: 🧪 Test with pytest
         run: |
           export PYTHONPATH=$PWD/src:$PYTHONPATH
