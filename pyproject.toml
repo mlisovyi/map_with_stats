@@ -65,6 +65,7 @@ omit = ["*/__init__.py", "_version.py"]
 [tool.ruff]
 select = [
     "E",   # pycodestyle
+    "W",   # pycodestyle
     "F",   # pyflakes
     "N",   # naming according to PEP8
     "D",   # pydocstyle
