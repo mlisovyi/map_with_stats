@@ -77,7 +77,13 @@ ignore = [
     "D100", # modules typically have no doc-string in this project
     "D104", # packages typically have no doc-string in this project
 ]
+# used for resolution of first- vs third-party imports
 src = ["src"]
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F403"]
+# don't complain about missing doc strings and usage of variable names in tests
+"tests/**/*.py" = ["D103", "N806", "PD901"]
 
 [tool.ruff.pydocstyle]
 convention = "google"
