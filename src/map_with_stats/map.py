@@ -56,7 +56,6 @@ def build_map(
     Returns:
         folium.Map: the map with cholopleth layer
     """
-
     _check_cols_in_df(gdf_stats, ["geometry", "value"])
 
     # make a copy to avoid modifying input data in-place

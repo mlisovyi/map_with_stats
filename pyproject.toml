@@ -12,7 +12,7 @@ local_scheme = "no-local-version"
 [project]
 name = "map_with_stats"
 dynamic = ["version"]
-authors = [{name="Mischa Lisovyi"}]
+authors = [{ name = "Mischa Lisovyi" }]
 description = "Interactive map with a choropleth displaying some statistics as color per hectare"
 readme = "README.md"
 license = { file = "LICENSE" }
@@ -35,12 +35,12 @@ dependencies = ["folium>=0.10,<1.0", "geopandas>=0.10,<1.0"]
 "Documentation" = "https://mlisovyi.github.io/map_with_stats/"
 
 [tool.setuptools.dynamic]
-version = {attr = "map_with_stats._version.__version__"}
+version = { attr = "map_with_stats._version.__version__" }
 
 [tool.setuptools.packages.find]
-where = ["src"]  # ["."] by default
+where = ["src"]               # ["."] by default
 include = ["map_with_stats*"]
-namespaces = false  # true by default
+namespaces = false            # true by default
 
 [tool.setuptools.package-data]
 map_with_stats = ["py.typed"]
@@ -52,26 +52,49 @@ norecursedirs = '.*'
 # coverege report will be added to pytest run
 addopts = "--cov=src/map_with_stats --cov-report=term --cov-config=pyproject.toml --no-cov-on-fail"
 # pytest issues PytestDeprecationWarning about hooks in pytest_cov, so we filter those out
-filterwarnings = ["ignore::FutureWarning", "ignore::pytest.PytestDeprecationWarning"]
-testpaths=["tests"]
+filterwarnings = [
+    "ignore::FutureWarning",
+    "ignore::pytest.PytestDeprecationWarning",
+]
+testpaths = ["tests"]
 
 [tool.coverage.run]
 # skip module and any further custom files
-omit =["*/__init__.py", "_version.py"]
+omit = ["*/__init__.py", "_version.py"]
+
+[tool.ruff]
+select = [
+    "E",   # pycodestyle
+    "W",   # pycodestyle
+    "F",   # pyflakes
+    "N",   # naming according to PEP8
+    "D",   # pydocstyle
+    "PD",  # pandas linter
+    "NPY", # numpy linter
+]
+ignore = [
+    "E501", # line length is regulated by black
+    "D100", # modules typically have no doc-string in this project
+    "D104", # packages typically have no doc-string in this project
+]
+# used for resolution of first- vs third-party imports
+src = ["src"]
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F403"]
+# don't complain about missing doc strings and usage of variable names in tests
+"tests/**/*.py" = ["D103", "N806", "PD901"]
+
+[tool.ruff.pydocstyle]
+convention = "google"
 
 [tool.mypy]
 # What files should be included.
-files =["src"]
+files = ["src"]
 # We want to be as strict as possible but allow reexports
 strict = true
 implicit_reexport = true
 
 [[tool.mypy.overrides]]
-module = [
-    "pandas",
-    "shapely",
-    "folium",
-    "geopandas",
-    "shapely.ops"
-]
+module = ["pandas", "shapely", "folium", "geopandas", "shapely.ops"]
 ignore_missing_imports = true

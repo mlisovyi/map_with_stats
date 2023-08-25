@@ -13,9 +13,6 @@
     // "python.envFile": "${workspaceFolder}/environment/windows.env",
     "python.envFile": "${workspaceFolder}/environment/linux.env",
     "python.formatting.provider": "black",
-    "python.linting.enabled": true,
-    "python.linting.flake8Enabled": false,
-    "python.linting.pylintEnabled": true,
     "python.testing.pytestEnabled": true,
     // PYTHONPATH for the jupyter notebooks
     "jupyter.notebookFileRoot": "${workspaceFolder}/src",

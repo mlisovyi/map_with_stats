@@ -9,10 +9,10 @@ from map_with_stats.utils import _check_cols_in_df
 
 @pytest.fixture
 def dummy_data() -> pd.DataFrame:
-    np.random.seed(42)
+    rng = np.random.default_rng(42)
     n = 1000
-    X = np.random.randint(1_000, 10_000, size=n)
-    Y = np.random.randint(1_000, 10_000, size=n)
+    X = rng.integers(1_000, 10_000, size=n)
+    Y = rng.integers(1_000, 10_000, size=n)
     df = pd.DataFrame({"X": X * 100, "Y": Y * 100, "V": 0})
     return df
 
