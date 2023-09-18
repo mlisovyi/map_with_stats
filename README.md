@@ -7,7 +7,7 @@
 ![platform](https://img.shields.io/badge/platform-linux%20|%20macos%20|%20windows-lightgray.svg)
 [![CI status](https://github.com/mlisovyi/map_with_stats/actions/workflows/test.yml/badge.svg?labelColor=555555?event=push)](https://github.com/mlisovyi/map_with_stats)
 [![Docs status](https://github.com/mlisovyi/map_with_stats/actions/workflows/docs.yml/badge.svg)](https://github.com/mlisovyi/map_with_stats)
-[![linter](https://img.shields.io/badge/code%20linting-pylint-blue.svg)](https://github.com/PyCQA/pylint)
+[![linter](https://img.shields.io/badge/code%20linting-ruff-blue.svg)](https://github.com/astral-sh/ruff)
 [![testing](https://img.shields.io/badge/code%20testing-pytest-blue.svg)](https://github.com/pytest-dev/pytest)
 [![typing](https://img.shields.io/badge/code%20typing-mypy-blue.svg)](http://mypy-lang.org/)
 [![docs](https://img.shields.io/badge/documentation-mkdocs--material-blue.svg)](https://squidfunk.github.io/mkdocs-material/)
