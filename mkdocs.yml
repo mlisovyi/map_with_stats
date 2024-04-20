@@ -91,3 +91,8 @@ plugins:
 # auto-reload on changes in the following folders outside of the docs (for development of docs)
 watch:
   - src
+
+# add analytics
+extra:
+  analytics:
+    provider: custom
