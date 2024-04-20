@@ -14,6 +14,7 @@ nav:
 
 theme:
   name: material
+  # this parameter defines where to find HTML that will overwrite or complement the pages from the theme
   custom_dir: overrides
   features:
     # enables annotations, see https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#code-annotations
