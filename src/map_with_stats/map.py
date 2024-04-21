@@ -18,6 +18,7 @@ def build_map(
     zoom_start: int = 15,
     max_n_hectares_to_display: Optional[int] = None,
     plot_boundaries: bool = False,
+    fill_opacity: float = 0.6,
 ) -> folium.Map:
     """Generate a folium map with the some statistics per hectare added as a choropleth alayer on top.
 
@@ -49,6 +50,7 @@ def build_map(
         plot_boundaries (bool, optional): set to True to display boundaries between choroplet elements.
             This is useful if you visualise not hectares but some administrative entities.
             Defaults to False.
+        fill_opacity (float, optional): opacity of the choropleth. Defaults to 0.6.
 
     Raises:
         ValueError: unsupported `bins_type` provided.
@@ -108,7 +110,7 @@ def build_map(
         data=cliped_values,
         key_on="feature.id",  # index of the geodataframe is transformed into `id` field
         fill_color="YlOrBr",
-        fill_opacity=0.6,
+        fill_opacity=fill_opacity,
         bins=bins,
         line_weight=line_weight,
         line_color=line_color,
