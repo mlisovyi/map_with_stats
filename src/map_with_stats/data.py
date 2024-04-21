@@ -28,7 +28,11 @@ def filter_xy(
 
 
 def create_geo_df_with_hectar_polygons(
-    df: pd.DataFrame, col_value: str, crs_out: str = "EPSG:4326"
+    df: pd.DataFrame,
+    col_value: str,
+    crs_out: str = "EPSG:4326",
+    crs_in: str = "EPSG:21781",
+    grid_size: int = 100,
 ) -> gpd.GeoDataFrame:
     """Generate hectare polygons.
 
@@ -39,8 +43,10 @@ def create_geo_df_with_hectar_polygons(
     Args:
         df (pd.DataFrame): input data. The code expects to find the following columns: _"X", "Y", `col_value`_.
         col_value (str): column name with some values
-        crs_out (_type_, optional): coordinate system to which output polygons are transformed.
+        crs_out (str, optional): coordinate system to which output polygons are transformed.
             Defaults to "EPSG:4326".
+        crs_in (str, optional): coordinate system of the input data. Defaults to "EPSG:21781" (=LV03).
+        grid_size (int, optional): grid size in meters. Defaults to 100 ()i.e. hectar.
 
     Returns:
         gpd.GeoDataFrame: a table with hectare polygons and the values.
@@ -50,18 +56,25 @@ def create_geo_df_with_hectar_polygons(
     for row in df.itertuples():
         x, y = row.X, row.Y
         polygons.append(
-            shapely.Polygon([(x, y), (x + 100, y), (x + 100, y + 100), (x, y + 100)])
+            shapely.Polygon(
+                [
+                    (x, y),
+                    (x + grid_size, y),
+                    (x + grid_size, y + grid_size),
+                    (x, y + grid_size),
+                ]
+            )
         )
     gdf_stats = gpd.GeoDataFrame(
         {
             "geometry": polygons,
             "value": df[col_value],
-            "hectare_id": df["X"] // 100 * 10_000 + df["Y"] // 100,
+            "hectare_id": df["X"] // grid_size * 10_000 + df["Y"] // grid_size,
             "X": df["X"],
             "Y": df["Y"],
         },
         index=df.index,
-        crs="EPSG:21781",  # LV03 coordinate system
+        crs=crs_in,
     )
     # transform into the desired coordinate system
     gdf_stats = gdf_stats.to_crs(crs_out)
