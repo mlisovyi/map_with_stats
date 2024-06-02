@@ -78,6 +78,7 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tilde
 
+remote_branch: docs
 plugins:
   - search
   - mkdocstrings:
@@ -90,7 +91,6 @@ plugins:
             show_if_no_docstring: True
             show_root_toc_entry: False
   - mike:
-      # remote_branch: docs
       canonical_version: latest
       # the rest of setting below are the defaults according to the `mike` docs
       alias_type: symlink
