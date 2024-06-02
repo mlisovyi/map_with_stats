@@ -89,6 +89,16 @@ plugins:
             docstring_style: google
             show_if_no_docstring: True
             show_root_toc_entry: False
+  - mike:
+      # remote_branch: docs
+      canonical_version: latest
+      # the rest of setting below are the defaults according to the `mike` docs
+      alias_type: symlink
+      redirect_template: null
+      deploy_prefix: ""
+      version_selector: true
+      css_dir: css
+      javascript_dir: js
 
 # auto-reload on changes in the following folders outside of the docs (for development of docs)
 watch:
