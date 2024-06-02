@@ -109,4 +109,6 @@ extra:
   analytics:
     provider: custom
   version:
-    provider: mike
+    provider: mike # display the version selection widget in the title
+    alias: true # display the aliases next to the versions
+    default: latest # the default version that one should stick to
