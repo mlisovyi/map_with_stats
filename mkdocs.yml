@@ -108,3 +108,5 @@ watch:
 extra:
   analytics:
     provider: custom
+  version:
+    provider: mike
